@@ -65,7 +65,7 @@ nav.main button.active:hover{background:var(--green2);color:#f4efe2}
 /* Product pagination — a category tab shows one page of products at a
    time (8 per page) with page buttons, instead of one endless grid */
 .pager{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:22px}
-#productPager{order:2}
+#productPager{order:6}
 #mfPager{order:2}
 .pager button{min-width:44px;min-height:44px;padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-family:"Jost",sans-serif;font-size:.92rem;font-weight:600;cursor:pointer}
 .pager button:hover{border-color:var(--gold);color:var(--gold)}
@@ -346,6 +346,12 @@ footer.site ul button:hover{color:#fff}
 .search-box input{border:0;background:none;outline:none;font:inherit;color:var(--ink);width:100%;height:48px}
 .shop-tools select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:0 14px;height:50px;cursor:pointer}
 .chips{display:flex;gap:9px;flex-wrap:wrap;margin:8px 0 20px}
+.wardrobe-banner{display:none;order:2;align-items:center;gap:22px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;margin:0 0 16px}
+body[data-route="wardrobes"] .wardrobe-banner,body[data-route="storage"] .wardrobe-banner{display:flex}
+.wardrobe-banner img{width:132px;height:100px;object-fit:cover;border-radius:10px;flex:none}
+.wardrobe-banner h3{margin:0 0 6px;font-size:1.4rem}
+.wardrobe-banner p{margin:0;color:var(--ink2);font-size:.95rem;max-width:640px}
+@media(max-width:540px){.wardrobe-banner{flex-direction:column;align-items:flex-start;gap:12px}.wardrobe-banner img{width:100%;height:160px}}
 .chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:9px 19px;font-family:"Jost",sans-serif;font-size:.9rem;font-weight:500;cursor:pointer;min-height:42px}
 .chip:hover{border-color:var(--gold)}
 .chip.active{background:var(--green);color:#f4efe2;border-color:var(--green)}
@@ -713,8 +719,8 @@ footer.site .brand b{color:#fff}
   #shop .sec-head h2{font-size:1.5rem}
   #shop .sec-head p{display:none}
   #productGrid{order:2}
-  #shop .shop-tools{order:3;margin-top:22px;margin-bottom:6px}
-  #shop .chips{order:4;margin:6px 0 0}
+  #shop .shop-tools{order:3;margin-top:0;margin-bottom:10px}
+  #shop .chips{order:4;margin:0 0 14px} #productGrid{order:5}
   #molty{padding-top:14px!important;padding-bottom:30px}
   #molty .wrap{display:flex;flex-direction:column}
   #molty .sec-head{order:1;margin-bottom:12px}
@@ -747,8 +753,8 @@ footer.site .brand b{color:#fff}
 #shop .sec-head h2{font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.15}
 #shop .sec-head p{margin-top:4px;font-size:.93rem;max-width:860px}
 #productGrid{order:2}
-#shop .shop-tools{order:3;margin-top:26px;margin-bottom:8px}
-#shop .chips{order:4;margin:8px 0 0}
+#shop .shop-tools{order:3;margin-top:0;margin-bottom:12px}
+#shop .chips{order:4;margin:0 0 18px} #productGrid{order:5}
 #molty{padding-top:18px;padding-bottom:44px}
 #molty .wrap{display:flex;flex-direction:column}
 #molty .sec-head{order:1;margin-bottom:14px}
@@ -811,7 +817,7 @@ header.site{background:var(--surface)}
       <button type="button" data-nav="wedding">Wedding</button>
       <button type="button" data-nav="bridal">Bridal</button>
       <button type="button" data-nav="beds">Beds</button>
-      <button type="button" data-nav="sofas">Sofa Sets</button>
+      <button type="button" data-nav="sofas">Sofa Sets</button><button type="button" data-nav="wardrobes">Wardrobes</button>
       <button type="button" data-nav="dining">Dining</button>
       <button type="button" data-nav="office">Office</button>
       <button type="button" data-nav="executive">Executive Sets</button>
@@ -994,10 +1000,18 @@ header.site{background:var(--surface)}
 </section>
 
 <!-- SHOP -->
-<section id="shop" data-pages="shop wedding bridal beds sofas dining office executive outdoor mirrors storage">
+<section id="shop" data-pages="shop wedding bridal beds sofas wardrobes dining office executive outdoor mirrors storage">
   <div class="wrap">
     <div class="sec-head">
       <div><p class="kicker">The Collection</p><h2 id="shopTitle">Shop Furniture</h2><p>Tap Buy Now on any product to order on WhatsApp — the name, article number and price go with your message.</p></div>
+    </div>
+    <div class="wardrobe-banner">
+      <img src="assets/wardrobe-mirror-4door.jpg" alt="Four-door full mirror wardrobe from the Wardrobes collection" width="800" height="800" loading="lazy" decoding="async" />
+      <div>
+        <p class="kicker" style="margin-bottom:6px">Wardrobes Collection</p>
+        <h3 class="serif">Wardrobes, Almari &amp; Fitted Storage</h3>
+        <p>Every wardrobe design in one place — sliding-door and mirrored wardrobes, fitted wardrobe systems and classic wooden almari, each made to order in your room size by our own workshop.</p>
+      </div>
     </div>
     <div class="shop-tools">
       <label class="search-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg><input id="searchInput" type="search" placeholder="Search sofa, bed, office chair, NS-101…" aria-label="Search products" /></label>
@@ -1239,7 +1253,7 @@ header.site{background:var(--surface)}
         <li><button type="button" data-nav="dining">Dining Sets</button></li>
         <li><button type="button" data-nav="office">Office Chairs</button></li>
         <li><button type="button" data-nav="office">Office Tables</button></li>
-        <li><button type="button" data-nav="storage">Storage &amp; Wardrobes</button></li>
+        <li><button type="button" data-nav="wardrobes">Storage &amp; Wardrobes</button></li>
         <li><button type="button" data-nav="outdoor">Outdoor Furniture</button></li>
         <li><button type="button" data-nav="mirrors">Designer Mirrors — New</button></li>
       </ul></div>
@@ -1481,15 +1495,15 @@ var CATEGORIES = [
  {name:"Bridal", count:"Bridal Bedroom Sets", img:"assets/NS-B16.jpg"},
  {name:"Beds", count:"Beds · Bedroom Sets", img:"assets/NS-203.jpg"},
  {name:"Sofas & Living", count:"Sofas · Chairs · Tables", img:"assets/NS-101.jpg"},
+ {name:"Wardrobes", count:"Wardrobes · Almari · Cabinets", img:"assets/wardrobe-02.jpg"},
  {name:"Dining", count:"Tables · Chairs · Sets", img:"assets/NS-102.jpg"},
  {name:"Office", count:"Chairs · Tables · Suites", img:"assets/NS-202.jpg"},
  {name:"Executive Sets", count:"Executive Office Sets", img:"assets/NS-EX01.jpg"},
  {name:"Outdoor", count:"Garden · Terrace · Lawn", img:"assets/NS-208.jpg"},
  {name:"Mirrors", count:"Designer · Full-Length · New", img:"assets/NS-M06.jpg"},
- {name:"Storage", count:"Wardrobes · Almari · Cabinets", img:"assets/wardrobe-02.jpg"},
  {name:"Interiors", count:"Complete Home Interiors", img:"assets/NS-205.jpg"}
 ];
-var FILTERS = ["All","Wedding","Bridal","Beds","Sofas & Living","Dining","Office","Executive Sets","Outdoor","Mirrors","Storage","Interiors"];
+var FILTERS = ["All","Wedding","Bridal","Beds","Sofas & Living","Wardrobes","Dining","Office","Executive Sets","Outdoor","Mirrors","Interiors"];
 function isWedding(p){ return p.name.indexOf("Wedding") > -1; }
 function isBridal(p){ return p.name.indexOf("Bridal") > -1; }
 function isExecutive(p){ return p.art.indexOf("NS-EX") === 0; }
@@ -1500,6 +1514,7 @@ function matchesCat(p, cat){
   if(cat==="Beds") return p.cat==="Bedroom" && !isWedding(p) && !isBridal(p);
   if(cat==="Executive Sets") return isExecutive(p);
   if(cat==="Office") return p.cat==="Office" && !isExecutive(p);
+  if(cat==="Wardrobes") return p.cat==="Storage";
   return p.cat===cat;
 }
 var activeCat = "All", activeStyle = "All", query = "", sortBy = "featured";
@@ -1773,7 +1788,7 @@ document.getElementById("styleSelect").addEventListener("change", function(){ ac
 document.getElementById("sortSelect").addEventListener("change", function(){ sortBy = this.value; renderProducts(); });
 document.getElementById("searchBtn").addEventListener("click", function(){
   if(currentRoute() !== "shop"){ goToRoute("shop"); }
-  setTimeout(function(){ try{ document.getElementById("searchInput").focus({preventScroll:true}); }catch(e){ document.getElementById("searchInput").focus(); } }, 120);
+  setTimeout(function(){ scrollTopInstant(); try{ document.getElementById("searchInput").focus({preventScroll:true}); }catch(e){ document.getElementById("searchInput").focus(); } }, 120);
 });
 document.getElementById("menuBtn").addEventListener("click", function(){
   document.getElementById("mainNav").classList.toggle("open");
@@ -2070,6 +2085,7 @@ var FRONT_GROUPS = [
  {title:"Bridal Bedroom Sets", cat:"Bridal", test:function(p){ return isBridal(p); }},
  {title:"Beds", cat:"Beds", test:function(p){ return p.cat==="Bedroom" && !isWedding(p) && !isBridal(p); }},
  {title:"Sofas & Living", cat:"Sofas & Living", test:function(p){ return p.cat==="Sofas & Living"; }},
+ {title:"Wardrobes", cat:"Wardrobes", test:function(p){ return p.cat==="Storage"; }},
  {title:"Dining", cat:"Dining", test:function(p){ return p.cat==="Dining"; }},
  {title:"Office", cat:"Office", test:function(p){ return p.cat==="Office" && !isExecutive(p); }},
  {title:"Executive Sets", cat:"Executive Sets", test:function(p){ return isExecutive(p); }},
@@ -2201,9 +2217,9 @@ function initStaticReveals(){
    which sections are displayed — instant, no reload, no long scroll.
    All nav and in-page links are buttons calling goToRoute() — they
    switch in the same view and never touch the page address. */
-var PAGE_CAT = { shop:"All", wedding:"Wedding", bridal:"Bridal", beds:"Beds", sofas:"Sofas & Living", dining:"Dining", office:"Office", executive:"Executive Sets", outdoor:"Outdoor", mirrors:"Mirrors", storage:"Storage", interiors:"Interiors" };
-var CAT_SLUG = { "All":"shop", "Wedding":"wedding", "Bridal":"bridal", "Beds":"beds", "Sofas & Living":"sofas", "Dining":"dining", "Office":"office", "Executive Sets":"executive", "Outdoor":"outdoor", "Mirrors":"mirrors", "Storage":"storage", "Interiors":"interiors" };
-var KNOWN_ROUTES = { home:1, shop:1, wedding:1, bridal:1, beds:1, sofas:1, dining:1, office:1, executive:1, outdoor:1, mirrors:1, interiors:1, storage:1, "new-arrivals":1, molty:1, styles:1, buyers:1, about:1, directors:1, inquiry:1, visit:1 };
+var PAGE_CAT = { shop:"All", wedding:"Wedding", bridal:"Bridal", beds:"Beds", sofas:"Sofas & Living", wardrobes:"Wardrobes", dining:"Dining", office:"Office", executive:"Executive Sets", outdoor:"Outdoor", mirrors:"Mirrors", storage:"Wardrobes", interiors:"Interiors" };
+var CAT_SLUG = { "All":"shop", "Wedding":"wedding", "Bridal":"bridal", "Beds":"beds", "Sofas & Living":"sofas", "Wardrobes":"wardrobes", "Dining":"dining", "Office":"office", "Executive Sets":"executive", "Outdoor":"outdoor", "Mirrors":"mirrors", "Storage":"storage", "Interiors":"interiors" };
+var KNOWN_ROUTES = { home:1, shop:1, wedding:1, bridal:1, beds:1, sofas:1, wardrobes:1, dining:1, office:1, executive:1, outdoor:1, mirrors:1, interiors:1, storage:1, "new-arrivals":1, molty:1, styles:1, buyers:1, about:1, directors:1, inquiry:1, visit:1 };
 function routeFromHash(){
   var h = (location.hash || "").replace(/^#/, "").replace(/^\//, "");
   if(!h || h==="top" || h==="categories" || h==="showcase") return "home";
