@@ -479,7 +479,7 @@ body[data-route="wardrobes"] .wardrobe-banner,body[data-route="storage"] .wardro
 @media(max-width:480px){.mirror-strip{gap:9px}}
 
 /* Interior banner */
-.interior{background:var(--green);color:#f2ecdb}
+.interior{background:var(--green);color:#f2ecdb}.interior{padding:13px 0}.int-line{font-size:1.15rem;margin:0;text-align:center}
 .interior .grid2{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
 .interior img{border-radius:var(--radius);height:420px;width:100%;object-fit:cover}
 .interior h2{font-size:clamp(1.9rem,3.4vw,2.6rem);margin:0 0 14px;line-height:1.15}
@@ -795,7 +795,7 @@ header.site{background:var(--surface)}
 .cat-card{border-radius:10px}
 .style-card,.why,.buyer-card,.testi-card,.mgmt-card,.visit-card{border-radius:10px}
 .sec-head h2{letter-spacing:.005em}
-body[data-route="interiors"] #interiors{order:1}body[data-route="interiors"] #shop{order:2}</style>
+body[data-route="interiors"] #interiors{order:1}body[data-route="interiors"] #shop{order:2}body[data-route="interiors"] #shop .sec-head p{display:none}body[data-route="interiors"] #shop{padding-top:6px}</style>
 </head>
 <body>
 
@@ -1029,23 +1029,7 @@ body[data-route="interiors"] #interiors{order:1}body[data-route="interiors"] #sh
 </section>
 
 <!-- INTERIORS -->
-<section class="interior" id="interiors" data-pages="interiors">
-  <div class="wrap grid2">
-    <div>
-      <p class="kicker" style="color:var(--gold2)">Complete Interiors</p>
-      <h2>One Team for Your Whole Home or Office</h2>
-      <p>From a single room to a full house or corporate office — our designers plan the layout, our workshop builds the furniture, and our team installs it. Homes, offices, hotels, restaurants and clinics across Pakistan.</p>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m4 12 5 5L20 6"/></svg> Free design consultation on WhatsApp — send us your room photos</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m4 12 5 5L20 6"/></svg> Custom sizes, fabrics and wood finishes made to order</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m4 12 5 5L20 6"/></svg> Full sets: living + dining + bedroom + office, matched in one finish</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m4 12 5 5L20 6"/></svg> Delivery, placement and assembly included on large orders</li>
-      </ul>
-      <a class="btn btn-gold" href="https://wa.me/923335361800?text=Hello%20Showroom%20Nazeer%20Son's!%20I%20want%20a%20free%20interior%20consultation.%20I%20will%20share%20my%20room%20photos." target="_blank" rel="noopener">Get a Free Consultation</a>
-    </div>
-    <img src="assets/NS-205.jpg" alt="Complete luxury home interior designed and furnished by Nazeer Son's" loading="lazy" decoding="async" />
-  </div>
-</section>
+<section class="interior" id="interiors" data-pages="interiors"><div class="wrap"><h2 class="int-line">Complete Interiors &mdash; One Team for Your Whole Home or Office</h2></div></section>
 
 <!-- WHY / ABOUT -->
 <section id="about" data-pages="about">
